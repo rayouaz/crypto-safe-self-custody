@@ -58,7 +58,7 @@ contract RestrictedFunds {
 
     function resetCancellationRequest() public {
         require(isCancellationPending(), "Cancellation not requested");
-        require(isResetRequestedByOwner && isResetRequestedByAuthorized, "Cancellation not requested");
+        require(isResetRequestedByOwner && isResetRequestedByAuthorized, "Not authorized to reset cancellation");
         cancellationRequestTime = 0;
         isCancellationRequestedByOwner = false;
         isResetRequestedByOwner = false;
