@@ -1,8 +1,7 @@
 # Safe self custody
 A contract-based solution for secure self-custody of blockchain assets
 
-I present the solution in the paper
-I added a quick made implemention in solidity, in progress and not even teste so DO NOT USE AS IT IS.
+I present the solution in the paper and I added a quick made implemention in solidity, in progress and not even teste so DO NOT USE AS IT IS.
 TLDR: 
 - You receive both keys to manage fnunds through a smart-contract.
 - A service provider keeps one of them.
