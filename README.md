@@ -1,5 +1,4 @@
-# Safe self custody
-A contract-based solution for secure self-custody of blockchain assets
+# Contract-based solution for secure self-custody of blockchain assets
 
 I present the solution below.
 
