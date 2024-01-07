@@ -5,7 +5,7 @@ I present the solution in the paper and I added a quick made implemention in sol
 
 
 # TLDR: 
-- You receive both keys to manage fnunds through a smart-contract.
+- You receive both keys to manage funds through a smart-contract.
 - A service provider keeps one of them.
 - The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds.
 - To protect yourself from malicious service provider, you can prevent any action of the provider if you have both keys.
