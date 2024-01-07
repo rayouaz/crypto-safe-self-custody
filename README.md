@@ -5,7 +5,7 @@ I present the solution below.
 Here is a quick made implemention in solidity, in progress and not even tested so **DO NOT USE AS IT IS**.
 
 
-# TLDR
+# TL;DR
 - You receive 2 keys to manage funds through a smart-contract.
 - A service provider keeps one of them.
 - The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds.
