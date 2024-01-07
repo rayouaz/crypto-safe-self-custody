@@ -7,8 +7,8 @@ pragma solidity ^0.8.0;
 contract RestrictedFunds {
     address public owner;
     address public authorizedKey;
-    uint public cancellationRequestTime;
-    uint public lastCancellationAbortion;
+    uint public cancellationRequestTime = 0;
+    uint public lastCancellationAbortion = 0;
     bool public isCancellationRequestedByOwner;
     bool public isResetRequestedByOwner;
     bool public isResetRequestedByAuthorized;
