@@ -1,20 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-
 //STILL IN PROGRESS !!
 //NOT EVEN TESTED !!
 
 contract RestrictedFunds {
     address public owner;
     address public authorizedKey;
-    uint public cancellationRequestTime;
-    uint public lastCancellationAbortion;
+    uint public cancellationRequestTime = 0;
+    uint public lastCancellationAbortion = 0;
     bool public isCancellationRequestedByOwner;
     bool public isResetRequestedByOwner;
     bool public isResetRequestedByAuthorized;
 
-    uint constant cancellationDelay = 24 hours;
+    uint constant cancellationDelay = 1 weeks;
     uint constant newCancellationRequestDelay = 24 hours;
 
 
@@ -36,7 +35,7 @@ contract RestrictedFunds {
 
 
     function transferFunds(address payable _to, uint _amount) public onlyAuthorized {
-        require(!isCancellationPending(), "The account is blocked")
+        require(!isCancellationPending(), "The account is blocked");
         require(address(this).balance >= _amount, "Insufficient balance");
         _to.transfer(_amount);
     }
@@ -54,12 +53,12 @@ contract RestrictedFunds {
         require(isCancellationPending(), "Cancellation not requested");
         require(block.timestamp >= cancellationRequestTime + cancellationDelay, "Cancellation delay not met");
         authorizedKey = owner;
-        resetCancellationRequest();
+        isCancellationRequestedByOwner = false;
     }
 
     function resetCancellationRequest() public {
         require(isCancellationPending(), "Cancellation not requested");
-        require(isResetRequestedByOwner && isResetRequestedByAuthorized, "Cancellation not requested");
+        require(isResetRequestedByOwner && isResetRequestedByAuthorized, "Not authorized to reset cancellation");
         cancellationRequestTime = 0;
         isCancellationRequestedByOwner = false;
         isResetRequestedByOwner = false;
@@ -67,11 +66,11 @@ contract RestrictedFunds {
         lastCancellationAbortion = block.timestamp;
     }
 
-    function resetCancellationRequest() public onlyOwner{
+    function resetCancellationRequestOwner() public onlyOwner{
         isResetRequestedByOwner = true;
     }
 
-    function resetCancellationRequest() public onlyAuthorized{
+    function resetCancellationRequestAuthorized() public onlyAuthorized{
         isResetRequestedByAuthorized = true;
     }
 
@@ -83,7 +82,7 @@ contract RestrictedFunds {
         return address(this).balance;
     }
 
-    function setNewAuthorizedKey(adress newAuthorizedKey) public onlyOwner{
+    function setNewAuthorizedKey(address newAuthorizedKey) public onlyOwner{
         require(owner == authorizedKey);
         authorizedKey = newAuthorizedKey;
     }
