@@ -12,6 +12,9 @@ Here is a quick made implemention in solidity, in progress and not even tested s
 - The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds.
 - To protect yourself from malicious service provider, you can prevent any action of the provider if you have both keys.
 
+# Introduction
+
+In the context of technological advancements, self-custody of digital assets on blockchains represents a significant challenge. The following text proposes a solution aimed at simplifying this self-custody while maintaining the inherent security advantages of blockchains. We introduce an innovative mechanism for managing private keys. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security, essential in the field of blockchain transactions.
 
 # Main proposition
 In order to develop the proposed solution, we utilize a blockchain capable of executing smart contracts autonomously, independently of any centralized organization, and without the need for a trusted third party.
