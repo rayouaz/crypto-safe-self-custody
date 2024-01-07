@@ -3,7 +3,7 @@ A contract-based solution for secure self-custody of blockchain assets
 
 I present the solution below.
 
-There is also a quick made implemention in solidity, in progress and not even tested so **DO NOT USE AS IT IS**.
+Here is a quick made implemention in solidity, in progress and not even tested so **DO NOT USE AS IT IS**.
 
 
 # TLDR
