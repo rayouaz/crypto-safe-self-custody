@@ -15,7 +15,7 @@ Here is a quick made implemention in solidity, in progress and not even tested s
 
 In the context of technological advancements, self-custody of digital assets on blockchains represents a significant challenge. The following text proposes a solution aimed at simplifying this self-custody while maintaining the inherent security advantages of blockchains. We introduce an innovative mechanism for managing private keys. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security, essential in the field of blockchain transactions.
 
-# Main proposition
+# Our proposal
 In order to develop the proposed solution, we utilize a blockchain capable of executing smart contracts autonomously, independently of any centralized organization, and without the need for a trusted third party.
 
 We introduce an entity responsible for securing and storing cryptographic keys for its clients. Users register with this provider through a know-your-customer procedure to obtain a pair of keys, with the option to export and keep a personal copy. Moreover, another third party supplies a digital signature device to the user, which can resemble a bank card. This device contains a private key hidden into its hardware, which is not disclosed to anyone.
