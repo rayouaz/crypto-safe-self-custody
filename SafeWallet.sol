@@ -13,7 +13,7 @@ contract RestrictedFunds {
     bool public isResetRequestedByOwner;
     bool public isResetRequestedByAuthorized;
 
-    uint constant cancellationDelay = 24 hours;
+    uint constant cancellationDelay = 1 weeks;
     uint constant newCancellationRequestDelay = 24 hours;
 
 
