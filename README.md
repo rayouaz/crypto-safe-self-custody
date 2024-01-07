@@ -35,7 +35,9 @@ We examine three types of possible attacks:
 
 
 In the unlikely event of simultaneous hacking of the user's private key and the theft of the card, the only solution lies in the provider's commitment to reimburse losses due to its security failure.
+Users wishing to keep a copy of the key should hide it at home on a piece of paper, and preferably encrypt it with a password. If he forgets how he encrypted it, he will normally be able to recover the key from the service provider (if not during an adversarial period).
 
+The mechanism is robust as long as the service provider can be considered reliable most of the time and serves roughly as a "forgotten password" feature.
 # Conclusion
 The advantages of this solution are manifold. Only the actor having access to both the private key and the physical device controls their funds. This method solves the difficulty of holding funds by offering a partial key storage service, with the possibility of recovering it in case of loss. An account is created by obtaining a card similar to a bank card, linked by a smart contract, offering complete control over the funds.
 
