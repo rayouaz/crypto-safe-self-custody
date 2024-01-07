@@ -1,7 +1,8 @@
 # Safe self custody
 A contract-based solution for secure self-custody of blockchain assets
 
-I present the solution in the paper and I added a quick made implemention in solidity, in progress and not even testes so **DO NOT USE AS IT IS**.
+I present the solution in the paper.
+There is also a quick made implemention in solidity, in progress and not even testes so **DO NOT USE AS IT IS**.
 
 
 # TLDR: 
