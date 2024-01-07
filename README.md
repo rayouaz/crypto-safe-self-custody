@@ -1,4 +1,4 @@
-# Contract-based solution for secure self-custody of blockchain assets
+# Secure self-custody of blockchain assets
 
 I present the solution below.
 
