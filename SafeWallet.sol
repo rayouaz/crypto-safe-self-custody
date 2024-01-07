@@ -55,7 +55,7 @@ contract RestrictedFunds {
         require(isCancellationPending(), "Cancellation not requested");
         require(block.timestamp >= cancellationRequestTime + cancellationDelay, "Cancellation delay not met");
         authorizedKey = owner;
-        resetCancellationRequest();
+        isCancellationRequestedByOwner = false;
     }
 
     function resetCancellationRequest() public {
