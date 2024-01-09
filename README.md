@@ -6,7 +6,7 @@ Here is a quick made implemention in solidity, in progress and not even tested s
 
 
 # TL;DR
-- You receive 2 pair of cryptographic keys to manage funds through a smart-contract.
+- You receive 2 cryptographic (pair of) keys to manage funds through a smart-contract.
 - A service provider keeps one of them.
 - The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds.
 - To protect yourself from malicious service provider, you can prevent any action of the provider if you have both keys.
