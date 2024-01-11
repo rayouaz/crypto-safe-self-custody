@@ -9,7 +9,7 @@ To run the test suite, install truffle through npm, install ganache from their w
 # TL;DR
 - You receive 2 cryptographic (pair of) keys to manage funds through a smart-contract.
 - A service provider keeps one of them.
-- The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds.
+- The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds and block the previous one.
 - To protect yourself from malicious service provider, you can prevent any action of the provider if you have both keys.
 
 # Introduction
