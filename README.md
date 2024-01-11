@@ -12,6 +12,9 @@ To run the test suite, install truffle through npm, install ganache from their w
 - The authority of spending funds is linked to the other key. If you loose it or if it was stolen, the service provider can provide you another key to spend the funds and block the previous one.
 - To protect yourself from malicious service provider, you can prevent any action of the provider if you have both keys.
 
+Note that the service provider can only be a simple cloud storage service where you would save your private key without risking compromising your funds. You will then register the smart-contract and manage it yourself.
+In the following I am thinking of a more engaged service provider who could provide self-custody for people who are not comfortable with advanced technology.
+
 # Introduction
 
 In the context of technological advancements, self-custody of digital assets on blockchains represents a significant challenge. The following proposes a solution aimed at simplifying this self-custody while maintaining the inherent security advantages of blockchains. We introduce an innovative mechanism for managing private keys. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security.
