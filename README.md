@@ -1,7 +1,6 @@
 # Secure self-custody of blockchain assets
 
-I present the contract below.
-Here is a quick made implementation in solidity. It is still in progress so please **do not use it for now**.
+Here is a quick made implementation in solidity of the concept I prsent below. It is still in progress so please **do not use it as it is**.
 
 To run the test suite, install truffle through npm, install ganache from their website then run 'truffle test' at root.
 
