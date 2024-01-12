@@ -1,6 +1,10 @@
 # Introduction
 
-In the context of technological advancements, self-custody of digital assets on blockchains represents a significant challenge. The following proposes a solution aimed at simplifying this self-custody while maintaining the inherent security advantages of blockchains. We introduce an innovative mechanism for managing private keys. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security, essential in the field of blockchain transactions.
+In the context of technological advancements, self-custody of digital assets on blockchains represents a significant challenge. 
+In an ecosystem where crypto-currencies represent a fractional reserve in financial institutions, there is no lender of last resort if these institutions go bankrupt. 
+Self-custody is therefore essential in such industries to enable people to secure their funds outside any regulation, arrangement or political framework.
+
+ The following proposes a solution aimed at simplifying this self-custody while maintaining this inherent security advantage of blockchains. We introduce an innovative mechanism for managing private keys. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security.
 
 # Our proposal
 In order to develop the proposed solution, we utilize a blockchain capable of executing smart contracts autonomously, independently of any centralized organization, and without the need for a trusted third party.
