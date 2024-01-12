@@ -3,7 +3,7 @@
 I explain the idea in the file 'safe-custody.md'.
 Here is a quick made implementation in solidity. It is still in progress so **do not use as it is**.
 
-To run the test suite, install truffle through npm, install ganache from their website then run 'truffle test' at root.
+To run the test suite, install truffle through npm, install ganache from their website, launch it then run 'truffle test' at root.
 
 
 # TL;DR
@@ -13,4 +13,4 @@ To run the test suite, install truffle through npm, install ganache from their w
 - To protect yourself from malicious service provider, you can prevent any action of the provider if you have both keys.
 - The shared-key can not be used to spend funds directly, if you loose it you can still get it back from the provider (if not in a adversial phase).
 
-Note that the service provider can be just a simple cloud storage service where you would save your private key without risking compromising your funds. You will then register the smart-contract and manage it yourself. In the text file I am thinking of a more engaged service provider who could provide self-custody for people who don't want to manage the contract.
+Note that the service provider can be just a simple cloud storage service where you would save your private key without risking compromising your funds. You will then register the smart-contract and manage it yourself. In the md file I am thinking of a more engaged service provider who could provide self-custody for people who don't want to manage the contract.
