@@ -4,7 +4,7 @@ In the context of technological advancements, self-custody of digital assets on 
 In an ecosystem where crypto-currencies represent a fractional reserve in financial institutions, there is no lender of last resort if these institutions go bankrupt. 
 Self-custody is therefore essential in such industries to enable people to secure their funds outside any regulation, arrangement or political framework.
 
- The following proposes a solution aimed at simplifying this self-custody while maintaining this inherent security advantage of blockchains. We introduce an innovative mechanism for managing custody throught a smart contract. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security.
+ The following proposes a solution aimed at simplifying this self-custody while maintaining this inherent security advantage of blockchains. We introduce an innovative mechanism for managing custody through a smart contract. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security.
 
 # Our proposal
 In order to develop the proposed solution, we utilize a blockchain capable of executing smart contracts autonomously, independently of any centralized organization, and without the need for a trusted third party.
