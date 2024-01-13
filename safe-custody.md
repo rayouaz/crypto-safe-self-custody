@@ -1,15 +1,15 @@
 # Introduction
 
 In the context of technological advancements, self-custody of digital assets on blockchains represents a significant challenge. 
-In an ecosystem where crypto-currencies represent a fractional reserve in financial institutions, there is no lender of last resort if these institutions go bankrupt. 
+In an ecosystem where crypto-currencies represent a fractional reserve in financial institutions, there may be no lender of last resort such as central banks if these institutions go bankrupt. 
 Self-custody is therefore essential in such industries to enable people to secure their funds outside any regulation, arrangement or political framework.
 
- The following proposes a solution aimed at simplifying this self-custody while maintaining this inherent security advantage of blockchains. We introduce an innovative mechanism for managing private keys. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security.
+ The following proposes a solution aimed at simplifying this self-custody while maintaining this inherent security advantage of blockchains. We introduce an innovative mechanism for managing custody through a smart contract. This system allows users to have a complete control over their assets while minimizing the risks associated with the loss or theft of their private key. This approach promises a good balance between ease of use and robust security.
 
 # Our proposal
 In order to develop the proposed solution, we utilize a blockchain capable of executing smart contracts autonomously, independently of any centralized organization, and without the need for a trusted third party.
 
-We introduce an entity responsible for securing and storing cryptographic keys for its clients. Users register with this provider through a know-your-customer procedure to obtain a pair of keys, with the option to export and keep a personal copy. Moreover, the provider supplies a digital signature device to the user capable of interacting with the contract, which can be compared to a bank card (we will refer to it as such later). This device contains a private key hidden into its hardware, which is not disclosed to anyone.
+We introduce an entity responsible for securing and storing cryptographic keys for its clients. Users register with this provider through a know-your-customer procedure to obtain a pair of keys, with the option to export and keep a personal copy. Moreover, the provider supplies a digital signature device to the user capable of interacting with the blockchain, which can be compared to a bank card (we will refer to it as such later). This device contains a private key hidden into its hardware, which is not disclosed to anyone.
 
  A smart contract is then registered using these keys, stipulating that funds can only be spent via the public key of the physical device. Consequently, the spending authority is transferred from the provider's keys to that of the physical device.
 The contract also mention that it is possible, via the provider's keys (possibly also stored by the user), to immediately block the device, thus canceling the contract that allows it to spend the funds (A). The funds are then blocked for a predefined period. After this period, a new device linked to a similar contract can be registered. However, the simultaneous signature of the device keys and the other keys held by the service provider can cancel this blocking request during the period in which the funds are blocked (B). Blocking requests are then no longer allowed for a certain time.
