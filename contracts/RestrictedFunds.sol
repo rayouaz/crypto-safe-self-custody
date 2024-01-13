@@ -6,9 +6,10 @@ contract RestrictedFunds {
     address public authorizedKey;
     uint public cancellationRequestTime = 0;
     uint public lastCancellationAbortion = 0;
-    bool public isCancellationRequestedByOwner;
-    bool public isResetRequestedByOwner;
-    bool public isResetRequestedByAuthorized;
+    bool public isCancellationRequestedByOwner = false;
+    bool public isResetRequestedByOwner = false;
+    bool public isResetRequestedByAuthorized = false;
+    uint public dailyWithdrawalLimit = 0;
 
     uint constant cancellationDelay = 1 weeks;
     uint constant newCancellationRequestDelay = 24 hours;
@@ -33,6 +34,7 @@ contract RestrictedFunds {
     function transferFunds(address payable _to, uint _amount) public onlyAuthorized {
         require(!isCancellationPending(), "The account is blocked");
         require(address(this).balance >= _amount, "Insufficient balance");
+        require(_amount <= dailyWithdrawalLimit || dailyWithdrawalLimit == 0);
         _to.transfer(_amount);
     }
 
@@ -43,6 +45,7 @@ contract RestrictedFunds {
         require(block.timestamp >= lastCancellationAbortion + newCancellationRequestDelay, "A delay is required to request a cancellation");
         isCancellationRequestedByOwner = true;
         cancellationRequestTime = block.timestamp;
+        emit CancelRequest();
     }
 
     function finalizeCancellation() public onlyOwner {
@@ -82,6 +85,13 @@ contract RestrictedFunds {
         require(owner == authorizedKey);
         authorizedKey = newAuthorizedKey;
     }
+
+    function setDailyWithdrawalLimit(uint newWithdrawalLimit) public onlyOwner{
+        dailyWithdrawalLimit = newWithdrawalLimit;
+    }
+
+    event CancelRequest();
+
 
     receive() external payable {}
 }

@@ -40,8 +40,10 @@ contract("RestrictedFunds", (accounts) => {
     });
 
     it("should allow the owner to request cancellation", async () => {
-        await restrictedFunds.requestCancellation({ from: owner });
+        let result = await restrictedFunds.requestCancellation({ from: owner });
         assert.isTrue(await restrictedFunds.isCancellationRequestedByOwner(), "Cancellation request was not set");
+        const log = result.logs[0];
+        assert.equal(log.event, "CancelRequest", "An event should be emit");
     });
 
     it("should not allow non-owners to request cancellation", async () => {
