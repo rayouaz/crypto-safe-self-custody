@@ -6,11 +6,8 @@ contract("RestrictedFunds", (accounts) => {
     const authorizedKey = accounts[1];
     const thirdParty = accounts[2];
     const cancellationDelay = 604800; // 1 week in seconds
+    const largeEtherAccount = accounts[9] //suppose large eth account 
 
-    before(async function() {
-        const largeEtherAccount = accounts[9]; //suppose large eth account 
-        await web3.eth.sendTransaction({ from: largeEtherAccount, to: owner, value: web3.utils.toWei("10", "ether") });
-    });
 
     beforeEach(async () => {
         restrictedFunds = await RestrictedFunds.new(authorizedKey, { from: owner });
@@ -22,7 +19,7 @@ contract("RestrictedFunds", (accounts) => {
     });
 
     it("should allow the authorized key to transfer funds", async () => {
-        await web3.eth.sendTransaction({ from: owner, to: restrictedFunds.address, value: web3.utils.toWei("1", "ether") });
+        await web3.eth.sendTransaction({ from: largeEtherAccount, to: restrictedFunds.address, value: web3.utils.toWei("1", "ether") });
         const initialBalance = await web3.eth.getBalance(thirdParty);
         const amount = web3.utils.toWei("0.5", "ether");
         await restrictedFunds.transferFunds(thirdParty, amount, { from: authorizedKey });

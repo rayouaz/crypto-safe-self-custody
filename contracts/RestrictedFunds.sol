@@ -10,10 +10,11 @@ contract RestrictedFunds {
     bool public isResetRequestedByOwner = false;
     bool public isResetRequestedByAuthorized = false;
     uint public dailyWithdrawalLimit = 0;
+    uint public spentToday = 0;
+    uint public lastSpendDate;
 
     uint constant cancellationDelay = 1 weeks;
     uint constant newCancellationRequestDelay = 24 hours;
-
 
     constructor(address _authorizedKey) {
         owner = msg.sender;
@@ -30,11 +31,15 @@ contract RestrictedFunds {
         _;
     }
 
-
     function transferFunds(address payable _to, uint _amount) public onlyAuthorized {
         require(!isCancellationPending(), "The account is blocked");
         require(address(this).balance >= _amount, "Insufficient balance");
-        require(_amount <= dailyWithdrawalLimit || dailyWithdrawalLimit == 0);
+        if (block.timestamp > lastSpendDate + 24 hours) {
+            spentToday = 0;
+            lastSpendDate = block.timestamp;
+        }
+        require((spentToday + _amount) <= dailyWithdrawalLimit || dailyWithdrawalLimit == 0, "Withdrawal limit reached");
+        spentToday += _amount;
         _to.transfer(_amount);
     }
 
@@ -88,10 +93,11 @@ contract RestrictedFunds {
 
     function setDailyWithdrawalLimit(uint newWithdrawalLimit) public onlyOwner{
         dailyWithdrawalLimit = newWithdrawalLimit;
+        emit NewWithdrawalLimit(newWithdrawalLimit);
     }
 
     event CancelRequest();
-
+    event NewWithdrawalLimit(uint amount);
 
     receive() external payable {}
 }
