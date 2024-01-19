@@ -14,6 +14,10 @@ We introduce an entity responsible for securing and storing cryptographic keys f
  A smart contract is then registered using these keys, stipulating that funds can only be spent via the public key of the physical device. Consequently, the spending authority is transferred from the provider's keys to that of the physical device.
 The contract also mention that it is possible, via the provider's keys (possibly also stored by the user), to immediately block the device, thus canceling the contract that allows it to spend the funds (A). The funds are then blocked for a predefined period. After this period, a new device linked to a similar contract can be registered. However, the simultaneous signature of the device keys and the other keys held by the service provider can cancel this blocking request during the period in which the funds are blocked (B). Blocking requests are then no longer allowed for a certain time.
 
+### Alternative version
+
+It is also feasible to only utilize the key held by both parties to cancel the blocking request, as the proof of possession of the device key is demonstrated through the capability to spend the funds.
+
 # Robustness
 We examine three types of possible attacks:
 
